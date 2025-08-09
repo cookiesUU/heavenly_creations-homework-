@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'HeadlineFont';
+    src: url('../../fonts/MaShanZheng-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MainBodyFont_1';
+    src: url('../../fonts/NotoSerifSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'MainBodyFont_1';
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    overflow-x:hidden;
+    background-image:url(../../images/knowledge_contest/bg3.png);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:200vh;
+    
+}
+
+/* 头部样式 */
+header {
+    display: flex;
+    position: fixed;
+    width:100%;
+    align-items: center;
+    justify-content:space-around;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    top: 0;
+}
+
+.title {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+}
+.logo{
+    display: flex;
+    width:30px;
+    margin-right: 30px;
+    
+
+}
+.logo img {
+    width:100%;
+    height: auto;
+}
+
+.title h1 {
+    font-size: 30px;
+    font-family: 'HeadlineFont';
+    color: #2b2323;
+    text-align: center;
+}
+
+/* 主导航栏 */
+#main-nav {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-primary {
+    line-height: 30px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-primary > li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-primary > li > a {
+    text-decoration: none;
+    color: #1e241f;
+    padding: 20px 15px;
+    margin: 0;
+    display: block;
+    font-size: 18px;
+
+}
+
+.nav-primary > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* 二级、三级导航栏默认隐藏 */
+.nav-secondary,
+.nav-tertiary {
+    display: none;
+    position: absolute;
+    top: 100%; /* 二级菜单显示在一级菜单下方 */
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.3);
+    list-style-type: none;
+    min-width: 150px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 鼠标悬停显示二级菜单 */
+#nav-book:hover > .nav-secondary,
+#nav-knowledge-contest:hover > .nav-secondary,
+#nav-bookPart1:hover > .nav-tertiary,
+#nav-bookPart2:hover > .nav-tertiary,
+#nav-bookPart3:hover > .nav-tertiary {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+/* 二级、三级菜单链接样式 */
+.nav-secondary > li > a,
+.nav-tertiary > li > a {
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #333;
+    display: block;
+}
+
+
+.nav-secondary > li > a:hover,
+.nav-tertiary > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 箭头 */
+.arrow-icon {
+    margin-left: 5px;
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+a:hover .arrow-icon {
+    transform: rotate(-90deg);
+}
+
+/* 过渡效果 */
+.nav-secondary,
+.nav-tertiary {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*通过悬停激活显示 */
+#nav-book:hover > .nav-secondary,
+#nav-knowledge-contest:hover > .nav-secondary,
+#nav-bookPart1:hover > .nav-tertiary,
+#nav-bookPart2:hover > .nav-tertiary,
+#nav-bookPart3:hover > .nav-tertiary {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.nav-tertiary {
+    top: 0; /* 确保三级导航与二级导航的顶部对齐 */
+    left: 100%; /* 使三级导航显示在二级导航的右侧 */
+}
+
+
+.container {
+    background-color: rgba(244, 212, 176, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    width: 80vw;
+    max-width: 600px;
+    position: relative;
+    top:-100px;
+}
+h2 {
+    text-align: center;
+    color: #4e3b31;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4f3b2f;
+}
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #f0e2cc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.form-group textarea {
+    resize: vertical;
+}
+.form-group input[type="submit"] {
+    background-color: #4e3b31;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px;
+    transition: background-color 0.3s ease;
+}
+.form-group input[type="submit"]:hover {
+    background-color: #4d3427;
+}
+input,textarea,select{
+    background-color: rgba(250, 236, 219, 0.345);
+}

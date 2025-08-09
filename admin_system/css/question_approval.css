@@ -1,0 +1,88 @@
+/* 表格容器样式 */
+.approval-table-container {
+    width: 100%;
+    overflow-x: auto; /* 允许横向滚动 */
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格样式 */
+.approval-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.approval-table th, .approval-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 表头背景色 */
+.approval-table th {
+    background-color: #2196F3;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 表格行的交替颜色 */
+.approval-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* 输入框样式 */
+.approval-table input[type="text"], .approval-table textarea, .approval-table select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* 文本框样式 */
+.approval-table textarea {
+    resize: vertical; /* 允许垂直调整 */
+    height: 100px;
+}
+
+/* 操作按钮样式 */
+.approval-table button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.approval-table .approve-btn {
+    background-color: #4CAF50;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.approval-table .approve-btn:hover {
+    background-color: #45a049;
+}
+
+.approval-table .reject-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.approval-table .reject-btn:hover {
+    background-color: #e53935;
+}
+
+.approval-table .action-form {
+    display: inline-block;
+    margin-right: 5px;
+}

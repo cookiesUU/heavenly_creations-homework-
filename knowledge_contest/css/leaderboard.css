@@ -1,0 +1,380 @@
+@font-face {
+    font-family: 'HeadlineFont';
+    src: url('../../fonts/MaShanZheng-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MainBodyFont_1';
+    src: url('../../fonts/NotoSerifSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'MainBodyFont_1';
+}
+
+body{
+    min-height: 100vh;
+    overflow-x:hidden;
+    background-image:url(../../images/knowledge_contest/bg.webp);
+    margin: 0;
+    padding: 0;
+
+    height:400vh;
+    
+}
+
+/* 头部样式 */
+header {
+    display: flex;
+    position: fixed;
+    width:100%;
+    align-items: center;
+    justify-content:space-around;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    top: 0;
+}
+
+.title {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+}
+.logo{
+    display: flex;
+    width:30px;
+    margin-right: 30px;
+    
+
+}
+.logo img {
+    width:100%;
+    height: auto;
+}
+
+.title h1 {
+    font-size: 30px;
+    font-family: 'HeadlineFont';
+    color: #2b2323;
+    text-align: center;
+}
+
+/* 主导航栏 */
+#main-nav {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-primary {
+    line-height: 30px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-primary > li {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-primary > li > a {
+    text-decoration: none;
+    color: #1e241f;
+    padding: 20px 15px;
+    margin: 0;
+    display: block;
+    font-size: 18px;
+
+}
+
+.nav-primary > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* 二级、三级导航栏默认隐藏 */
+.nav-secondary,
+.nav-tertiary {
+    display: none;
+    position: absolute;
+    top: 100%; /* 二级菜单显示在一级菜单下方 */
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.3);
+    list-style-type: none;
+    min-width: 150px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 鼠标悬停显示二级菜单 */
+#nav-book:hover > .nav-secondary,
+#nav-knowledge-contest:hover > .nav-secondary,
+#nav-bookPart1:hover > .nav-tertiary,
+#nav-bookPart2:hover > .nav-tertiary,
+#nav-bookPart3:hover > .nav-tertiary {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+/* 二级、三级菜单链接样式 */
+.nav-secondary > li > a,
+.nav-tertiary > li > a {
+    text-decoration: none;
+    padding: 8px 12px;
+    color: #333;
+    display: block;
+}
+
+
+.nav-secondary > li > a:hover,
+.nav-tertiary > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 箭头 */
+.arrow-icon {
+    margin-left: 5px;
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+a:hover .arrow-icon {
+    transform: rotate(-90deg);
+}
+
+/* 过渡效果 */
+.nav-secondary,
+.nav-tertiary {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*通过悬停激活显示 */
+#nav-book:hover > .nav-secondary,
+#nav-knowledge-contest:hover > .nav-secondary,
+#nav-bookPart1:hover > .nav-tertiary,
+#nav-bookPart2:hover > .nav-tertiary,
+#nav-bookPart3:hover > .nav-tertiary {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.nav-tertiary {
+    top: 0; /* 确保三级导航与二级导航的顶部对齐 */
+    left: 100%; /* 使三级导航显示在二级导航的右侧 */
+}
+
+.leaderboard {
+    font-family: 'KaiTi', serif;
+    width: 60%;
+    margin: 50px auto;
+    position: relative;
+    top:70px;
+    left:-100px;
+    background-color: #FAF5E4; /* 更加温暖的背景色 */
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* 柔和的阴影 */
+    overflow: hidden;
+    border: 2px solid #edcd95; /* 古风中更深的色调 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaderboard:hover {
+    transform: scale(1.05); /* 鼠标悬停时轻微放大 */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15); /* 加深阴影 */
+}
+
+.leaderboard h2 {
+    text-align: center;
+    color: #8C7A6E; /* 深一点的字体颜色 */
+    padding: 20px;
+    background-color: #EAE1D2; /* 淡雅但更有质感的背景色 */
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    border-bottom: 3px solid #C2B092;
+    font-family: 'KaiTi', serif;
+    position: relative;
+}
+
+.leaderboard h2:before, .leaderboard h2:after {
+    content: '❀';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #B8A594; /* 柔和但有些深度的装饰色 */
+}
+
+.leaderboard h2:before {
+    left: 15px;
+}
+
+.leaderboard h2:after {
+    right: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #D5C4A1; /* 柔和但深一点的表头背景 */
+    color: #4B3F3A; /* 古朴的字体颜色 */
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.3em;
+    border-bottom: 1px solid #C2B092;
+}
+
+th {
+    font-weight: bold;
+    font-family: 'KaiTi', serif;
+}
+
+tbody tr {
+    background-color: #F6E8D4; /* 柔和温暖的背景色 */
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #f3df9d; /* 悬停时微微加深的高亮效果 */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F3E3C8; /* 隔行稍深的背景色 */
+}
+
+td {
+    color: #705B4A; /* 更深的字体颜色 */
+    position: relative;
+}
+
+td:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(223, 201, 169, 0.5); /* 温暖的光晕效果 */
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+td:hover:before {
+    transform: translate(-50%, -50%) scale(3); /* 鼠标悬停时光晕扩散 */
+}
+
+tbody tr:first-child {
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #E3D2B8; /* 第一名的独特背景色 */
+    color: #4B3F3A;
+    animation: glow 1.5s infinite alternate;
+}
+
+tbody tr:first-child td:before {
+    background: rgba(223, 201, 169, 0.7); /* 第一名的增强光晕效果 */
+}
+
+/* 动态闪光效果 */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #E0DED7;
+    }
+    100% {
+        box-shadow: 0 0 20px #E0DED7;
+    }
+}
+.isQuiz {
+    position: fixed;   
+    bottom: 20px;      
+    right: 20px;       
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+
+#start-quiz-btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #D5C4A1;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+#start-quiz-btn:hover {
+    background-color: #cfae6c;
+}
+
+.isProposition {
+    position: fixed;   
+    bottom: 80px;      
+    right: 20px;       
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+
+#start-proposition-btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #D5C4A1;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+#start-proposition-btn:hover{
+    background-color: #cfae6c;
+}
+

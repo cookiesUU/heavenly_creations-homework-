@@ -1,0 +1,120 @@
+/* 整体布局 */
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    min-height: 100vh;
+    background-color: #ffffff; /* 确保白色背景 */
+}
+
+/* 表单和按钮样式 */
+.section input, .section select, .section button, .section textarea {
+    width: 100%;
+    padding: 5px;  /* 调整为适合的 padding */
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.section textarea {
+    resize: vertical;
+}
+
+.section button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.section button:hover {
+    background-color: #45a049;
+}
+
+/* 更新题目的表格 */
+.table-wrapper {
+    width: 100%; 
+    overflow-x: auto; 
+    margin-top: 20px;
+    box-sizing: border-box; /* 包括内边距和边框，确保不溢出 */
+}
+
+.table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box; /* 确保宽度不被边框和内边距影响 */
+}
+
+.table th {
+    background-color: #f1f1f1;
+}
+
+/* 表单输入框样式 */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0; /* 在小屏幕上调整左侧边栏 */
+        padding: 20px;
+    }
+
+    .add_question {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .add_question h2 {
+        font-size: 20px;
+    }
+
+    input[type="text"], select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+.table td textarea {
+    width: 100%; /* 使textarea的宽度适应父容器 */
+    max-width: 100%; /* 防止textarea宽度超出父容器 */
+    min-height: 50px;
+    max-height: 150px;
+    overflow-y: auto;  /* 竖向滚动 */
+}

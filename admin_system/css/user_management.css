@@ -1,0 +1,165 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Section Styling */
+.section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header styling */
+h3.section-title {
+    color: #333;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Add extra space between sections */
+.user-management-section {
+    border-left: 8px solid #4CAF50;
+    background-color: #f0f9e9;
+}
+
+.user-list-section {
+    border-left: 8px solid #2196F3;
+    background-color: #e9f3fc;
+}
+
+/* Form Styling */
+.user-form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fff;
+}
+
+.input-field:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Table Styling */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table th, .user-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    
+}
+
+.user-table th {
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.user-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.user-table td input,
+.user-table td button {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+/* Smaller input fields */
+.input-field-small {
+    width: 180px;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+/* Buttons */
+.update-btn, .delete-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.update-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .section {
+        padding: 15px;
+    }
+
+    .user-table th, .user-table td {
+        font-size: 0.9em;
+    }
+
+    .input-field-small {
+        width: 150px;
+    }
+
+    .submit-btn {
+        width: auto;
+        padding: 12px 18px;
+    }
+}
